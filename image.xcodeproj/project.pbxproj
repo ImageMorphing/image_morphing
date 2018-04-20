@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE780A3920897ECF00B7AC3B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A3820897ECF00B7AC3B /* main.cpp */; };
+		BE3B50E6208A055C00340E65 /* libopencv_imgcodecs.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E1208A055B00340E65 /* libopencv_imgcodecs.3.4.1.dylib */; };
+		BE3B50E7208A055C00340E65 /* libopencv_ml.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E2208A055B00340E65 /* libopencv_ml.3.4.1.dylib */; };
+		BE3B50E8208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E3208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib */; };
+		BE3B50E9208A055C00340E65 /* libopencv_highgui.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E4208A055C00340E65 /* libopencv_highgui.3.4.1.dylib */; };
+		BE3B50EA208A055C00340E65 /* libopencv_core.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E5208A055C00340E65 /* libopencv_core.3.4.1.dylib */; };
+		BE3B50ED208A168800340E65 /* image_io_processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3B50EB208A168800340E65 /* image_io_processor.cpp */; };
+		BE780A4A20897EEA00B7AC3B /* morph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A3F20897EE900B7AC3B /* morph.cpp */; };
+		BE780A4C20897EEA00B7AC3B /* catmullrom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4120897EE900B7AC3B /* catmullrom.cpp */; };
+		BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4220897EE900B7AC3B /* warp.cpp */; };
+		BE780A4E20897EEA00B7AC3B /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4520897EEA00B7AC3B /* util.cpp */; };
+		BE780A4F20897EEA00B7AC3B /* meshwarp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4720897EEA00B7AC3B /* meshwarp.cpp */; };
+		BEFB816F20899A0600C3AFBE /* seperate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFB816D20899A0600C3AFBE /* seperate.cpp */; };
+		BEFB817020899A0600C3AFBE /* merge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFB816E20899A0600C3AFBE /* merge.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +35,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE3B50E1208A055B00340E65 /* libopencv_imgcodecs.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_imgcodecs.3.4.1.dylib; sourceTree = "<group>"; };
+		BE3B50E2208A055B00340E65 /* libopencv_ml.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_ml.3.4.1.dylib; sourceTree = "<group>"; };
+		BE3B50E3208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_imgproc.3.4.1.dylib; sourceTree = "<group>"; };
+		BE3B50E4208A055C00340E65 /* libopencv_highgui.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_highgui.3.4.1.dylib; sourceTree = "<group>"; };
+		BE3B50E5208A055C00340E65 /* libopencv_core.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_core.3.4.1.dylib; sourceTree = "<group>"; };
+		BE3B50EB208A168800340E65 /* image_io_processor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image_io_processor.cpp; sourceTree = "<group>"; };
+		BE3B50EC208A168800340E65 /* image_io_processor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = image_io_processor.hpp; sourceTree = "<group>"; };
 		BE780A3520897ECF00B7AC3B /* image */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = image; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE780A3820897ECF00B7AC3B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BE780A3F20897EE900B7AC3B /* morph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = morph.cpp; sourceTree = "<group>"; };
+		BE780A4120897EE900B7AC3B /* catmullrom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = catmullrom.cpp; sourceTree = "<group>"; };
+		BE780A4220897EE900B7AC3B /* warp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = warp.cpp; sourceTree = "<group>"; };
+		BE780A4320897EE900B7AC3B /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		BE780A4420897EE900B7AC3B /* catmullrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = catmullrom.h; sourceTree = "<group>"; };
+		BE780A4520897EEA00B7AC3B /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		BE780A4620897EEA00B7AC3B /* morph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = morph.h; sourceTree = "<group>"; };
+		BE780A4720897EEA00B7AC3B /* meshwarp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = meshwarp.cpp; sourceTree = "<group>"; };
+		BE780A4920897EEA00B7AC3B /* meshwarp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meshwarp.h; sourceTree = "<group>"; };
+		BEFB816D20899A0600C3AFBE /* seperate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = seperate.cpp; sourceTree = "<group>"; };
+		BEFB816E20899A0600C3AFBE /* merge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = merge.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +61,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3B50E6208A055C00340E65 /* libopencv_imgcodecs.3.4.1.dylib in Frameworks */,
+				BE3B50E7208A055C00340E65 /* libopencv_ml.3.4.1.dylib in Frameworks */,
+				BE3B50E8208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib in Frameworks */,
+				BE3B50E9208A055C00340E65 /* libopencv_highgui.3.4.1.dylib in Frameworks */,
+				BE3B50EA208A055C00340E65 /* libopencv_core.3.4.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE0911A3208A171300B523B4 /* image_matrix_processor */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B50EB208A168800340E65 /* image_io_processor.cpp */,
+				BE3B50EC208A168800340E65 /* image_io_processor.hpp */,
+			);
+			path = image_matrix_processor;
+			sourceTree = "<group>";
+		};
 		BE780A2C20897ECF00B7AC3B = {
 			isa = PBXGroup;
 			children = (
 				BE780A3720897ECF00B7AC3B /* image */,
 				BE780A3620897ECF00B7AC3B /* Products */,
+				BEFB81622089905F00C3AFBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +101,32 @@
 		BE780A3720897ECF00B7AC3B /* image */ = {
 			isa = PBXGroup;
 			children = (
-				BE780A3820897ECF00B7AC3B /* main.cpp */,
+				BE0911A3208A171300B523B4 /* image_matrix_processor */,
+				BE780A4120897EE900B7AC3B /* catmullrom.cpp */,
+				BE780A4420897EE900B7AC3B /* catmullrom.h */,
+				BE780A4720897EEA00B7AC3B /* meshwarp.cpp */,
+				BE780A4920897EEA00B7AC3B /* meshwarp.h */,
+				BE780A3F20897EE900B7AC3B /* morph.cpp */,
+				BE780A4620897EEA00B7AC3B /* morph.h */,
+				BE780A4520897EEA00B7AC3B /* util.cpp */,
+				BEFB816E20899A0600C3AFBE /* merge.cpp */,
+				BEFB816D20899A0600C3AFBE /* seperate.cpp */,
+				BE780A4320897EE900B7AC3B /* util.h */,
+				BE780A4220897EE900B7AC3B /* warp.cpp */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		BEFB81622089905F00C3AFBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B50E5208A055C00340E65 /* libopencv_core.3.4.1.dylib */,
+				BE3B50E4208A055C00340E65 /* libopencv_highgui.3.4.1.dylib */,
+				BE3B50E1208A055B00340E65 /* libopencv_imgcodecs.3.4.1.dylib */,
+				BE3B50E3208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib */,
+				BE3B50E2208A055B00340E65 /* libopencv_ml.3.4.1.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE780A3920897ECF00B7AC3B /* main.cpp in Sources */,
+				BEFB817020899A0600C3AFBE /* merge.cpp in Sources */,
+				BE3B50ED208A168800340E65 /* image_io_processor.cpp in Sources */,
+				BEFB816F20899A0600C3AFBE /* seperate.cpp in Sources */,
+				BE780A4C20897EEA00B7AC3B /* catmullrom.cpp in Sources */,
+				BE780A4A20897EEA00B7AC3B /* morph.cpp in Sources */,
+				BE780A4E20897EEA00B7AC3B /* util.cpp in Sources */,
+				BE780A4F20897EEA00B7AC3B /* meshwarp.cpp in Sources */,
+				BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +313,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TL48E545E4;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/image",
+					/usr/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +329,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TL48E545E4;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/image",
+					/usr/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
