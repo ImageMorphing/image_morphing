@@ -39,6 +39,9 @@ public:
     // image generate related
     IplImage* gene_image(IplImage* r, IplImage *g, IplImage *b, IplImage *res_img = 0);
     
+    // image convert related
+    void conv_image(IplImage* img, char** img_ptr, int index = -1);
+    
 private:
     // image generate related
     IplImage* gene_image_by_3x3(IplImage *r_channel, IplImage *g_channel, IplImage *b_channel, IplImage *res_img = 0);

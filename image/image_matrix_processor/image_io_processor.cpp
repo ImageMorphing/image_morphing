@@ -150,3 +150,39 @@ IplImage* image_io_processor::gene_image_by_3x1(IplImage *r_plane, IplImage *g_p
     
     return res;
 }
+
+
+/*
+ * image_io_processor
+ * image convert related
+ */
+void image_io_processor::conv_image(IplImage *img, char** img_ptr, int index) {
+    if (img == 0 || img_ptr == 0) {
+        std::cout << stderr << "Empty Ptr Received" << std::endl;
+        exit(1);
+    }
+    int width = img->width,
+        height = img->height;
+    auto data_ptr = img->imageData;
+    if (img->nChannels == 1) {
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                img_ptr[y][x] = *(data_ptr + y * width + x);
+            }
+        }
+    } else if (img->nChannels == 3) {
+        if (index < 0) {
+            std::cout << stderr << "Index of Dimension 3 must have a positive value" << std::endl;
+            exit(1);
+        }
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                img_ptr[y][x] = *(data_ptr + y * width + x + (index + 1) * height * width);
+            }
+        }
+    } else {
+        std::cout << stderr << "Unexpected Dimension Received" << std::endl;
+        exit(1);
+    }
+}
+
