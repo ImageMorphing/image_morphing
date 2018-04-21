@@ -7,19 +7,19 @@
 /*            Create three grayscale BW format images relative to r, g, b channels                  */
 /********************************************************************/
 
-#include <iostream>
-
-#include <opencv2/imgproc.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/core/utility.hpp>
-
-#include "image_io_processor.hpp"
-
-using namespace std;
-
-#define IXSIZE 400
-#define IYSIZE 400
-#define IZSIZE 3
+//#include <iostream>
+//
+//#include <opencv2/imgproc.hpp>
+//#include <opencv2/highgui.hpp>
+//#include <opencv2/core/utility.hpp>
+//
+//#include "image_io_processor.hpp"
+//
+//using namespace std;
+//
+//#define IXSIZE 400
+//#define IYSIZE 400
+//#define IZSIZE 3
 
 
 //int main(int argc, char **argv) {

@@ -92,6 +92,7 @@
 			children = (
 				BE4C8C4B208ABC6B00F177BF /* image_seperator.cpp */,
 				BE4C8C4C208ABC6B00F177BF /* image_seperator.hpp */,
+				BEFB816D20899A0600C3AFBE /* seperate.cpp */,
 			);
 			path = image_seperator;
 			sourceTree = "<group>";
@@ -101,6 +102,7 @@
 			children = (
 				BE4C8C50208AC18A00F177BF /* image_merger.hpp */,
 				BE4C8C4F208AC18A00F177BF /* image_merger.cpp */,
+				BEFB816E20899A0600C3AFBE /* merge.cpp */,
 			);
 			path = image_merger;
 			sourceTree = "<group>";
@@ -135,8 +137,6 @@
 				BE780A3F20897EE900B7AC3B /* morph.cpp */,
 				BE780A4620897EEA00B7AC3B /* morph.h */,
 				BE780A4520897EEA00B7AC3B /* util.cpp */,
-				BEFB816E20899A0600C3AFBE /* merge.cpp */,
-				BEFB816D20899A0600C3AFBE /* seperate.cpp */,
 				BE780A4320897EE900B7AC3B /* util.h */,
 				BE780A4220897EE900B7AC3B /* warp.cpp */,
 			);

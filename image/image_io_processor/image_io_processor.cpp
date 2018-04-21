@@ -95,7 +95,7 @@ IplImage* image_io_processor::load_image(std::string img_name) {
         exit(1);
     }
     std::string img_path = path + img_name;
-    return cvLoadImage(img_name.data());
+    return cvLoadImage(img_path.data());
 }
 
 /*
