@@ -1,4 +1,4 @@
-/* ====================================================================== 
+/* ======================================================================
  * catmullRom.c - Catmull-Rom interpolating spline function.
  * Copyright (C) 1993 by George Wolberg
  *
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * catmullRom:
  *
  * Compute a Catmull-Rom spline passing through the len1 points in arrays

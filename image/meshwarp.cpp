@@ -1,4 +1,4 @@
-/* ====================================================================== 
+/* ======================================================================
  * meshwarp.c -  Mesh warping program.
  * Copyright (C) 1993 by George Wolberg
  *
@@ -9,13 +9,13 @@
 #include "meshwarp.h"
 #include "catmullrom.h"
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * meshWarp:
  *
  * Warp I1 with correspondence points given in meshes M1 and M2.
  * Result goes in I2.
  *
- * See "Digital Image Warping" by George Wolberg (IEEE Computer Society 
+ * See "Digital Image Warping" by George Wolberg (IEEE Computer Society
  * Press, 1990) for details.
  * Based on Douglas Smythe's algorithm (in "A Two-Pass Mesh Warping Algorithm
  * for Object Transformation and Image Interpolation", ILM Technical Memo
@@ -156,11 +156,11 @@ void meshWarp(imageP I1, imageP M1, imageP M2, imageP I2) {
     delete [] xrow;
     delete [] yrow;
     delete [] map;
-} 
+}
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * resample:
  *
  * Resample the len elements of src (with stride offst) into dst according
@@ -169,8 +169,8 @@ void meshWarp(imageP I1, imageP M1, imageP M2, imageP I2) {
  * (unweighted averaging) for minification.
  * Based on Fant's algorithm (IEEE Computer Graphics & Applications, 1/86).
  */
-void resample(uchar *src, int len, int offst, float *xmap, uchar *dst) 
-{ 
+void resample(uchar *src, int len, int offst, float *xmap, uchar *dst)
+{
     int u, x, v0, v1;
     double val, sizfac, inseg, outseg, acc, inpos[1024];
     
@@ -207,5 +207,5 @@ void resample(uchar *src, int len, int offst, float *xmap, uchar *dst)
             u++;
         }
     }
-} 
+}
 
