@@ -18,6 +18,7 @@ image_merger::image_merger(std::string file_addr) {
         file_addr += '/';
     }
     path = file_addr;
+    res_img = 0;
 }
 
 image_merger::~image_merger() {}
@@ -34,6 +35,13 @@ void image_merger::merg_image(std::string img_name) {
     img_pro.gene_image(r_channel, g_channel, b_channel, res_img);
     
     img_pro.save_image(img_path, res_img);
+}
+
+IplImage* image_merger::get_merged_image() {
+    if (res_img) {
+        return res_img;
+    }
+    return (IplImage *)0;
 }
 
 void image_merger::__check_path__() {

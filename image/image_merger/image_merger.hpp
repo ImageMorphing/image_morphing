@@ -25,6 +25,8 @@ public:
     
     void merg_image(std::string);
     
+    IplImage* get_merged_image();
+    
     void __check_path__();
     
 private:
