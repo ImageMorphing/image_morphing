@@ -1,13 +1,13 @@
 //
-//  image_seperator.hpp
+//  image_merger.hpp
 //  image
 //
 //  Created by cid aU on 2018/4/21.
 //  Copyright © 2018年 cid aU. All rights reserved.
 //
 
-#ifndef image_seperator_hpp
-#define image_seperator_hpp
+#ifndef image_merger_hpp
+#define image_merger_hpp
 
 #include <iostream>
 
@@ -17,20 +17,22 @@
 
 #include "image_io_processor.hpp"
 
-class image_seperator {
+class image_merger {
 public:
-    image_seperator(std::string);
-    ~image_seperator();
+    image_merger(std::string);
+    ~image_merger();
     
     
-    void sepe_image(std::string);
+    void merg_image(std::string);
     
     void __check_path__();
     
 private:
     std::string path;
     
+    IplImage* res_img;
+    
     image_io_processor img_pro;
 };
 
-#endif /* image_seperator_hpp */
+#endif /* image_merger_hpp */

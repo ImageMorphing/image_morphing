@@ -31,10 +31,7 @@ int main(int argc, char **argv) {
              *pG = img_pro.load_image_as_object(path + "g.bw"),
              *pB = img_pro.load_image_as_object(path + "b.bw");
     
-    IplImage *pResImage = img_pro.init_image(cvGetSize(pR), IPL_DEPTH_8U, 3),
-             *pR_Plane = img_pro.init_image(cvGetSize(pR), IPL_DEPTH_8U, 1),
-             *pG_Plane = cvCloneImage(pR_Plane),
-             *pB_Plane = cvCloneImage(pR_Plane);
+    IplImage *pResImage = img_pro.init_image(cvGetSize(pR), IPL_DEPTH_8U, 3);
     
     /* Read the input BW files*/
 

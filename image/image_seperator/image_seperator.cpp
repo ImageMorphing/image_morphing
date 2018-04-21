@@ -52,4 +52,7 @@ void image_seperator::sepe_image(std::string img_name) {
     img_pro.save_image(path + "b.bw", b_channel);
 }
 
-
+void image_seperator::__check_path__() {
+    std::cout << stderr << "Path: " << path << std::endl;
+    exit(9);
+}
