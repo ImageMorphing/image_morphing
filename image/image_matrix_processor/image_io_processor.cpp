@@ -52,15 +52,18 @@ void image_io_processor::save_image(std::string file_addr, cv::Mat mat) {
 
 void image_io_processor::save_image(std::string file_addr, IplImage *img) {
     if (img == 0) {
-        std::cout << stderr << "Empty Ptr Accpted" << std::endl;
+        std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
+    }
+    if (img->nChannels != 3) {
+        std::cout << stderr << "Unexpected Dimension Received" << std::endl;
     }
     cv::imwrite(file_addr, cv::cvarrToMat(img));
 }
 
 IplImage* image_io_processor::load_image(std::string file_addr) {
     if (file_addr.empty()) {
-        std::cout << stderr << "Empty Str Accpeted" << std::endl;
+        std::cout << stderr << "Empty Str Received" << std::endl;
         exit(1);
     }
     return cvLoadImage(file_addr.data());
@@ -83,7 +86,7 @@ IplImage* image_io_processor::init_image(CvSize size, int depth, int channels) {
  */
 void image_io_processor::show_image(IplImage *img, std::string name) {
     if (img == 0) {
-        std::cout << stderr << "Recepted Empty Ptr" << std::endl;
+        std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
     }
     cvShowImage(name.data(), img);
@@ -101,7 +104,7 @@ IplImage* image_io_processor::gene_image(IplImage *r, IplImage *g, IplImage *b, 
     } else if (r->nChannels == 3) {
         return this->gene_image_by_3x3(r, g, b, res);
     } else {
-        std::cout << stderr << "Unexpected Channel Accepted" << std::endl;
+        std::cout << stderr << "Unexpected Channel Received" << std::endl;
         exit(1);
     }
 }
@@ -111,7 +114,7 @@ IplImage* image_io_processor::gene_image_by_3x3(IplImage *r_channel, IplImage *g
     auto size_ptr = r_channel != 0 ? r_channel : g_channel;
     size_ptr = size_ptr != 0 ? size_ptr : b_channel;
     if (size_ptr == 0) {
-        std::cout << stderr << "Empty Ptrs Accepted" << std::endl;
+        std::cout << stderr << "Empty Ptrs Received" << std::endl;
         exit(1);
     }
     
@@ -137,7 +140,7 @@ IplImage* image_io_processor::gene_image_by_3x1(IplImage *r_plane, IplImage *g_p
     auto size_ptr = r_plane != 0 ? r_plane : g_plane;
     size_ptr = size_ptr != 0 ? size_ptr : b_plane;
     if (size_ptr == 0) {
-        std::cout << stderr << "Empty Ptrs Accepted" << std::endl;
+        std::cout << stderr << "Empty Ptrs Received" << std::endl;
         exit(1);
     }
     
