@@ -21,8 +21,8 @@ public:
     ~image_io_processor();
     
     // file I/O related
-    void save_image_as_object(std::string img_name, cv::Mat mat);
-    void save_image_as_object(std::string img_name, IplImage* img);
+    void save_image_as_object(std::string img_name, const cv::Mat mat);
+    void save_image_as_object(std::string img_name, const IplImage* img);
     IplImage* load_image_as_object(std::string img_name);
     
     void save_image(std::string img_name, cv::Mat mat);

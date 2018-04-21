@@ -23,7 +23,6 @@
 		BE780A4C20897EEA00B7AC3B /* catmullrom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4120897EE900B7AC3B /* catmullrom.cpp */; };
 		BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4220897EE900B7AC3B /* warp.cpp */; };
 		BE780A4E20897EEA00B7AC3B /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4520897EEA00B7AC3B /* util.cpp */; };
-		BE780A4F20897EEA00B7AC3B /* meshwarp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4720897EEA00B7AC3B /* meshwarp.cpp */; };
 		BEFB816F20899A0600C3AFBE /* seperate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFB816D20899A0600C3AFBE /* seperate.cpp */; };
 		BEFB817020899A0600C3AFBE /* merge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFB816E20899A0600C3AFBE /* merge.cpp */; };
 /* End PBXBuildFile section */
@@ -66,9 +65,6 @@
 		BE780A4320897EE900B7AC3B /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		BE780A4420897EE900B7AC3B /* catmullrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = catmullrom.h; sourceTree = "<group>"; };
 		BE780A4520897EEA00B7AC3B /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
-		BE780A4620897EEA00B7AC3B /* morph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = morph.h; sourceTree = "<group>"; };
-		BE780A4720897EEA00B7AC3B /* meshwarp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = meshwarp.cpp; sourceTree = "<group>"; };
-		BE780A4920897EEA00B7AC3B /* meshwarp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meshwarp.h; sourceTree = "<group>"; };
 		BEFB816D20899A0600C3AFBE /* seperate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = seperate.cpp; sourceTree = "<group>"; };
 		BEFB816E20899A0600C3AFBE /* merge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = merge.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +91,6 @@
 				BE07A90A208B102D00C61BDD /* image_morph.hpp */,
 				BE07A909208B102D00C61BDD /* image_morph.cpp */,
 				BE780A3F20897EE900B7AC3B /* morph.cpp */,
-				BE780A4620897EEA00B7AC3B /* morph.h */,
 			);
 			path = image_morph;
 			sourceTree = "<group>";
@@ -103,8 +98,6 @@
 		BE07A910208B1BCC00C61BDD /* image_meshwrap */ = {
 			isa = PBXGroup;
 			children = (
-				BE780A4720897EEA00B7AC3B /* meshwarp.cpp */,
-				BE780A4920897EEA00B7AC3B /* meshwarp.h */,
 				BE07A90D208B1BC700C61BDD /* image_meshwrap.cpp */,
 				BE07A90E208B1BC700C61BDD /* image_meshwrap.hpp */,
 			);
@@ -263,7 +256,6 @@
 				BE1F4FB6208AE7DC001509D9 /* typedef_c.hpp in Sources */,
 				BE780A4A20897EEA00B7AC3B /* morph.cpp in Sources */,
 				BE780A4E20897EEA00B7AC3B /* util.cpp in Sources */,
-				BE780A4F20897EEA00B7AC3B /* meshwarp.cpp in Sources */,
 				BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */,
 				BE4C8C4D208ABC6B00F177BF /* image_seperator.cpp in Sources */,
 				BE1F4FB0208AE678001509D9 /* image_util.cpp in Sources */,

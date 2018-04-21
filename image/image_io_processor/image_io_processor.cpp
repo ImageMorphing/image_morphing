@@ -27,7 +27,7 @@ image_io_processor::~image_io_processor() {
   * image_io_processor
   * file I/O related
   */
-void image_io_processor::save_image_as_object(std::string img_name, cv::Mat mat) {
+void image_io_processor::save_image_as_object(std::string img_name, const cv::Mat mat) {
     std::string img_path = path + img_name;
     IplImage img = IplImage(mat);
     if (img.nChannels == 1) {
@@ -37,7 +37,7 @@ void image_io_processor::save_image_as_object(std::string img_name, cv::Mat mat)
     cvSave(img_path.data(), &img);
 }
 
-void image_io_processor::save_image_as_object(std::string img_name, IplImage* img) {
+void image_io_processor::save_image_as_object(std::string img_name, const IplImage* img) {
     std::string img_path = path + img_name;
     if (img_name.empty()) {
         std::cout << stderr << "Empty Str Received" << std::endl;

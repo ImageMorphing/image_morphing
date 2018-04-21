@@ -53,7 +53,7 @@ image_ptr image_util::read_mesh(std::string file_name) {
         exit(1);
     }
     auto img_ptr = tran_image(fin);
-    fread(img_ptr->ch[0], img_ptr->width * img_ptr->height, 2*sizeof(float), fin);
+    fread(img_ptr->ch[0], img_ptr->width * img_ptr->height, 2 * sizeof(float), fin);
     fclose(fin);
     return img_ptr;
 }

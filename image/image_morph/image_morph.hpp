@@ -14,10 +14,10 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/core/utility.hpp>
 
-#include "image_morph.hpp"
 #include "image_util.hpp"
-#include "meshwarp.h"
+#include "image_meshwrap.hpp"
+#include "image_io_processor.hpp"
 
-void morph(const image_ptr I1, const image_ptr I2, const image_ptr M1, const image_ptr M2, int frame_num, const std::string basename);
+void image_morph(const IplImage* I1, const IplImage* I2, const image_ptr M1, const image_ptr M2, int frame_num, const std::string basename);
 
 #endif /* image_morph_hpp */

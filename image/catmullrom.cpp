@@ -6,7 +6,7 @@
  * ======================================================================
  */
 
-#include "meshwarp.h"
+#include "image_meshwrap.hpp"
 #include "catmullrom.h"
 #include <iostream>
 
@@ -67,8 +67,8 @@ void catmullRom(float *x1, float *y1, int len1, float *x2, float *y2, int len2)
             p3 = x1[j+1];  /* update 2nd endpt */
             
             /* clamp indices for endpoint interpolation */
-            j1 = MAX_i(j-1, 0);
-            j2 = MIN_i(j+2, len1-1);
+            j1 = MAX(j-1, 0);
+            j2 = MIN(j+2, len1-1);
             
             /* compute spline coefficients */
             dx  = 1.0 / (p3 - p1);
