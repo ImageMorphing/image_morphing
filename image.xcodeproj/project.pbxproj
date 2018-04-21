@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1F4FB0208AE678001509D9 /* image_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE1F4FAE208AE678001509D9 /* image_util.cpp */; };
+		BE1F4FB6208AE7DC001509D9 /* typedef_c.hpp in Sources */ = {isa = PBXBuildFile; fileRef = BE1F4FB5208AE7DC001509D9 /* typedef_c.hpp */; };
 		BE3B50E6208A055C00340E65 /* libopencv_imgcodecs.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E1208A055B00340E65 /* libopencv_imgcodecs.3.4.1.dylib */; };
 		BE3B50E7208A055C00340E65 /* libopencv_ml.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E2208A055B00340E65 /* libopencv_ml.3.4.1.dylib */; };
 		BE3B50E8208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E3208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib */; };
@@ -37,6 +39,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE1F4FAE208AE678001509D9 /* image_util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image_util.cpp; sourceTree = "<group>"; };
+		BE1F4FAF208AE678001509D9 /* image_util.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = image_util.hpp; sourceTree = "<group>"; };
+		BE1F4FB5208AE7DC001509D9 /* typedef_c.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = typedef_c.hpp; path = image_util/typedef_c.hpp; sourceTree = "<group>"; };
 		BE3B50E1208A055B00340E65 /* libopencv_imgcodecs.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_imgcodecs.3.4.1.dylib; sourceTree = "<group>"; };
 		BE3B50E2208A055B00340E65 /* libopencv_ml.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_ml.3.4.1.dylib; sourceTree = "<group>"; };
 		BE3B50E3208A055C00340E65 /* libopencv_imgproc.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_imgproc.3.4.1.dylib; sourceTree = "<group>"; };
@@ -87,6 +92,17 @@
 			path = image_io_processor;
 			sourceTree = "<group>";
 		};
+		BE1F4FB1208AE67C001509D9 /* image_util */ = {
+			isa = PBXGroup;
+			children = (
+				BE780A4520897EEA00B7AC3B /* util.cpp */,
+				BE780A4320897EE900B7AC3B /* util.h */,
+				BE1F4FAE208AE678001509D9 /* image_util.cpp */,
+				BE1F4FAF208AE678001509D9 /* image_util.hpp */,
+			);
+			path = image_util;
+			sourceTree = "<group>";
+		};
 		BE4C8C4E208ABC6F00F177BF /* image_seperator */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,14 +146,14 @@
 				BE4C8C4E208ABC6F00F177BF /* image_seperator */,
 				BE0911A3208A171300B523B4 /* image_io_processor */,
 				BE4C8C52208AC18F00F177BF /* image_merger */,
+				BE1F4FB1208AE67C001509D9 /* image_util */,
+				BE1F4FB5208AE7DC001509D9 /* typedef_c.hpp */,
 				BE780A4120897EE900B7AC3B /* catmullrom.cpp */,
 				BE780A4420897EE900B7AC3B /* catmullrom.h */,
 				BE780A4720897EEA00B7AC3B /* meshwarp.cpp */,
 				BE780A4920897EEA00B7AC3B /* meshwarp.h */,
 				BE780A3F20897EE900B7AC3B /* morph.cpp */,
 				BE780A4620897EEA00B7AC3B /* morph.h */,
-				BE780A4520897EEA00B7AC3B /* util.cpp */,
-				BE780A4320897EE900B7AC3B /* util.h */,
 				BE780A4220897EE900B7AC3B /* warp.cpp */,
 			);
 			path = image;
@@ -216,11 +232,13 @@
 				BE3B50ED208A168800340E65 /* image_io_processor.cpp in Sources */,
 				BEFB816F20899A0600C3AFBE /* seperate.cpp in Sources */,
 				BE780A4C20897EEA00B7AC3B /* catmullrom.cpp in Sources */,
+				BE1F4FB6208AE7DC001509D9 /* typedef_c.hpp in Sources */,
 				BE780A4A20897EEA00B7AC3B /* morph.cpp in Sources */,
 				BE780A4E20897EEA00B7AC3B /* util.cpp in Sources */,
 				BE780A4F20897EEA00B7AC3B /* meshwarp.cpp in Sources */,
 				BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */,
 				BE4C8C4D208ABC6B00F177BF /* image_seperator.cpp in Sources */,
+				BE1F4FB0208AE678001509D9 /* image_util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
