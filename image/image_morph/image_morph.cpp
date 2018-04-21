@@ -10,7 +10,6 @@
 
 void morph(const image_ptr I1, const image_ptr I2, const image_ptr M1, const image_ptr M2, int frame_num, const std::string basename) {
     double  w1, w2;
-//    char  name[20];
     std::string name;
     uchar *p1, *p2, *p3;
     float *x1, *y1, *x2, *y2, *x3, *y3;

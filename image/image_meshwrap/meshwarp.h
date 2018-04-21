@@ -17,13 +17,11 @@
 //#define MAX(A,B) ((A) > (B) ? (A) : (B))
 //#define MIN(A,B) ((A) < (B) ? (A) : (B))
 
-inline int MAX(const int A, const int B)
-{
+int MAX_i(const int A, const int B) {
     return ((A) > (B) ? (A) : (B));
 }
 
-inline int MIN(const int A, const int B)
-{
+int MIN_i(const int A, const int B) {
     return ((A) < (B) ? (A) : (B));
 }
 

@@ -16,7 +16,7 @@
 
 #include "image_morph.hpp"
 #include "image_util.hpp"
-//#include "meshwarp.h"
+#include "meshwarp.h"
 
 void morph(const image_ptr I1, const image_ptr I2, const image_ptr M1, const image_ptr M2, int frame_num, const std::string basename);
 

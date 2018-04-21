@@ -36,7 +36,7 @@ void meshWarp(image_ptr I1, image_ptr M1, image_ptr M2, image_ptr I2) {
     M_h = M1->height;
     
     /* allocate enough memory for a scanline along the longest dimension */
-    n = MAX(I_w, I_h);
+    n = MAX_i(I_w, I_h);
     indx = new float[n];
     xrow = new float[n];
     yrow = new float[n];
@@ -198,7 +198,7 @@ void resample(uchar *src, int len, int offst, float *xmap, uchar *dst)
         } else {
             acc += (val * outseg);
             acc /= sizfac;
-            *dst = (int) MIN(acc, 0xff);
+            *dst = (int) MIN_i(acc, 0xff);
             dst += offst;
             acc = 0.;
             inseg -= outseg;

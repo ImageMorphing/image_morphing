@@ -15,6 +15,8 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/core/utility.hpp>
 
+#include "typedef_c.hpp"
+
 
 /** 
  * \brief Generate a morph sequence of frames between images I1 and I2.
