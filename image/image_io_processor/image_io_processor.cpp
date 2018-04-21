@@ -9,6 +9,13 @@
 #include "image_io_processor.hpp"
 
 image_io_processor::image_io_processor(std::string file_addr) {
+    if (file_addr.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    if (file_addr[file_addr.size() - 1] != '/') {
+        file_addr += '/';
+    }
     path = file_addr;
 }
 
