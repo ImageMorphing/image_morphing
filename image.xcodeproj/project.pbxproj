@@ -13,6 +13,7 @@
 		BE3B50E9208A055C00340E65 /* libopencv_highgui.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E4208A055C00340E65 /* libopencv_highgui.3.4.1.dylib */; };
 		BE3B50EA208A055C00340E65 /* libopencv_core.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E5208A055C00340E65 /* libopencv_core.3.4.1.dylib */; };
 		BE3B50ED208A168800340E65 /* image_io_processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3B50EB208A168800340E65 /* image_io_processor.cpp */; };
+		BE4C8C4D208ABC6B00F177BF /* image_seperator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE4C8C4B208ABC6B00F177BF /* image_seperator.cpp */; };
 		BE780A4A20897EEA00B7AC3B /* morph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A3F20897EE900B7AC3B /* morph.cpp */; };
 		BE780A4C20897EEA00B7AC3B /* catmullrom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4120897EE900B7AC3B /* catmullrom.cpp */; };
 		BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4220897EE900B7AC3B /* warp.cpp */; };
@@ -42,6 +43,8 @@
 		BE3B50E5208A055C00340E65 /* libopencv_core.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.4.1.dylib; path = ../../../../usr/local/lib/libopencv_core.3.4.1.dylib; sourceTree = "<group>"; };
 		BE3B50EB208A168800340E65 /* image_io_processor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image_io_processor.cpp; sourceTree = "<group>"; };
 		BE3B50EC208A168800340E65 /* image_io_processor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = image_io_processor.hpp; sourceTree = "<group>"; };
+		BE4C8C4B208ABC6B00F177BF /* image_seperator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image_seperator.cpp; sourceTree = "<group>"; };
+		BE4C8C4C208ABC6B00F177BF /* image_seperator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = image_seperator.hpp; sourceTree = "<group>"; };
 		BE780A3520897ECF00B7AC3B /* image */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = image; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE780A3F20897EE900B7AC3B /* morph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = morph.cpp; sourceTree = "<group>"; };
 		BE780A4120897EE900B7AC3B /* catmullrom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = catmullrom.cpp; sourceTree = "<group>"; };
@@ -81,6 +84,15 @@
 			path = image_matrix_processor;
 			sourceTree = "<group>";
 		};
+		BE4C8C4E208ABC6F00F177BF /* image_seperator */ = {
+			isa = PBXGroup;
+			children = (
+				BE4C8C4B208ABC6B00F177BF /* image_seperator.cpp */,
+				BE4C8C4C208ABC6B00F177BF /* image_seperator.hpp */,
+			);
+			path = image_seperator;
+			sourceTree = "<group>";
+		};
 		BE780A2C20897ECF00B7AC3B = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 		BE780A3720897ECF00B7AC3B /* image */ = {
 			isa = PBXGroup;
 			children = (
+				BE4C8C4E208ABC6F00F177BF /* image_seperator */,
 				BE0911A3208A171300B523B4 /* image_matrix_processor */,
 				BE780A4120897EE900B7AC3B /* catmullrom.cpp */,
 				BE780A4420897EE900B7AC3B /* catmullrom.h */,
@@ -193,6 +206,7 @@
 				BE780A4E20897EEA00B7AC3B /* util.cpp in Sources */,
 				BE780A4F20897EEA00B7AC3B /* meshwarp.cpp in Sources */,
 				BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */,
+				BE4C8C4D208ABC6B00F177BF /* image_seperator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
