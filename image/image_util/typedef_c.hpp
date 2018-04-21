@@ -8,6 +8,9 @@
 
 #include <iostream>
 
+#define BW 0
+#define MESH 1
+
 typedef unsigned char uchar;
 
 typedef struct {    /* image data structure  */

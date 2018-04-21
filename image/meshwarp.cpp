@@ -21,13 +21,13 @@
  * for Object Transformation and Image Interpolation", ILM Technical Memo
  * #1030, 1990).
  */
-void meshWarp(imageP I1, imageP M1, imageP M2, imageP I2) {
+void meshWarp(image_ptr I1, image_ptr M1, image_ptr M2, image_ptr I2) {
     int  I_w, I_h, M_w, M_h;
     int  x, y, u, v, n;
     float *x1, *y1, *x2, *y2;
     float *xrow, *yrow, *xcol, *ycol, *coll, *indx, *map;
     uchar *src, *dst;
-    imageP  Mx, My, I3;
+    image_ptr  Mx, My, I3;
     
     I_w = I1->width;
     I_h = I1->height;

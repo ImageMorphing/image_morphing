@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE07A90B208B102D00C61BDD /* image_morph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE07A909208B102D00C61BDD /* image_morph.cpp */; };
 		BE1F4FB0208AE678001509D9 /* image_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE1F4FAE208AE678001509D9 /* image_util.cpp */; };
 		BE1F4FB6208AE7DC001509D9 /* typedef_c.hpp in Sources */ = {isa = PBXBuildFile; fileRef = BE1F4FB5208AE7DC001509D9 /* typedef_c.hpp */; };
 		BE3B50E6208A055C00340E65 /* libopencv_imgcodecs.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3B50E1208A055B00340E65 /* libopencv_imgcodecs.3.4.1.dylib */; };
@@ -39,6 +40,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE07A909208B102D00C61BDD /* image_morph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image_morph.cpp; sourceTree = "<group>"; };
+		BE07A90A208B102D00C61BDD /* image_morph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = image_morph.hpp; sourceTree = "<group>"; };
 		BE1F4FAE208AE678001509D9 /* image_util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image_util.cpp; sourceTree = "<group>"; };
 		BE1F4FAF208AE678001509D9 /* image_util.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = image_util.hpp; sourceTree = "<group>"; };
 		BE1F4FB5208AE7DC001509D9 /* typedef_c.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = typedef_c.hpp; path = image_util/typedef_c.hpp; sourceTree = "<group>"; };
@@ -83,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE07A90C208B103100C61BDD /* image_morph */ = {
+			isa = PBXGroup;
+			children = (
+				BE07A90A208B102D00C61BDD /* image_morph.hpp */,
+				BE07A909208B102D00C61BDD /* image_morph.cpp */,
+			);
+			path = image_morph;
+			sourceTree = "<group>";
+		};
 		BE0911A3208A171300B523B4 /* image_io_processor */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +159,7 @@
 				BE0911A3208A171300B523B4 /* image_io_processor */,
 				BE4C8C52208AC18F00F177BF /* image_merger */,
 				BE1F4FB1208AE67C001509D9 /* image_util */,
+				BE07A90C208B103100C61BDD /* image_morph */,
 				BE1F4FB5208AE7DC001509D9 /* typedef_c.hpp */,
 				BE780A4120897EE900B7AC3B /* catmullrom.cpp */,
 				BE780A4420897EE900B7AC3B /* catmullrom.h */,
@@ -230,6 +243,7 @@
 				BEFB817020899A0600C3AFBE /* merge.cpp in Sources */,
 				BE4C8C51208AC18A00F177BF /* image_merger.cpp in Sources */,
 				BE3B50ED208A168800340E65 /* image_io_processor.cpp in Sources */,
+				BE07A90B208B102D00C61BDD /* image_morph.cpp in Sources */,
 				BEFB816F20899A0600C3AFBE /* seperate.cpp in Sources */,
 				BE780A4C20897EEA00B7AC3B /* catmullrom.cpp in Sources */,
 				BE1F4FB6208AE7DC001509D9 /* typedef_c.hpp in Sources */,

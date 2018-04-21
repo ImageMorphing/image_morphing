@@ -100,6 +100,31 @@ void image_util::save_mesh(image_ptr mes, std::string file_name) {
     fclose(fout);
 }
 
+image_ptr image_util::allo_image(int width, int height, int type) {
+    image_ptr ptr = new image_struct();
+    if(ptr == 0) {
+        std::cout << stderr << "Cannot allocate memory" << std::endl;
+        exit(1);
+    }
+    ptr->width = width;
+    ptr->height = height;
+    
+    switch (type) {
+        case BW:
+            ptr->ch[0] = (uchar *)malloc(width * height);
+            break;
+        case MESH:
+            ptr->ch[0] = (float *)malloc(2 * width * height * sizeof(float));
+            ptr->ch[1] = (float *)ptr->ch[0] + width * height;
+            break;
+        default:
+            std::cout << stderr << "Unexpected type" << std::endl;
+            exit(1);
+            break;
+    }
+    return ptr;
+}
+
 void image_util::free_image(image_ptr ptr) {
     free((char *) ptr->ch[0]);
     free(ptr);

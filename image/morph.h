@@ -23,6 +23,6 @@
  * The output is stored in files "basename_xxx.bw" where xxx are sequential
  * 3-digit frame numbers.
  */
-void morph(const imageP I1, const imageP I2, const imageP M1, const imageP M2, int nframes, const char *basename);
+void morph(const image_ptr I1, const image_ptr I2, const image_ptr M1, const image_ptr M2, int nframes, const char *basename);
 
 #endif 
