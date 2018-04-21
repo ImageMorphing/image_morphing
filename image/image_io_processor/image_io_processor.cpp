@@ -8,8 +8,8 @@
 
 #include "image_io_processor.hpp"
 
-image_io_processor::image_io_processor() {
-    
+image_io_processor::image_io_processor(std::string file_addr) {
+    path = file_addr;
 }
 
 image_io_processor::~image_io_processor() {
@@ -20,37 +20,53 @@ image_io_processor::~image_io_processor() {
   * image_io_processor
   * file I/O related
   */
-void image_io_processor::save_image_as_object(std::string file_addr, cv::Mat mat) {
+void image_io_processor::save_image_as_object(std::string img_name, cv::Mat mat) {
+    std::string img_path = path + img_name;
     IplImage img = IplImage(mat);
     if (img.nChannels == 1) {
         std::cout << stderr << "This function only accept IplImage with 3 channels, please merge before call this function" << std::endl;
         exit(1);
     }
-    cvSave(file_addr.data(), &img);
+    cvSave(img_path.data(), &img);
 }
 
-void image_io_processor::save_image_as_object(std::string file_addr, IplImage* img) {
+void image_io_processor::save_image_as_object(std::string img_name, IplImage* img) {
+    std::string img_path = path + img_name;
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
     if (img) {
         if (img->nChannels == 1) {
             std::cout << stderr << "This function only accept IplImage with 3 channels, please merge before call this function" << std::endl;
             exit(1);
         }
-        cvSave(file_addr.data(), img);
+        cvSave(img_path.data(), img);
     } else {
         std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
     }
 }
 
-IplImage* image_io_processor::load_image_as_object(std::string file_addr) {
-    return (IplImage *)cvLoad(file_addr.data());
+IplImage* image_io_processor::load_image_as_object(std::string img_name) {
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    std::string img_path = path + img_name;
+    return (IplImage *)cvLoad(img_path.data());
 }
 
-void image_io_processor::save_image(std::string file_addr, cv::Mat mat) {
-    cv::imwrite(file_addr, mat);
+void image_io_processor::save_image(std::string img_name, cv::Mat mat) {
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    std::string img_path = path + img_name;
+    cv::imwrite(img_path, mat);
 }
 
-void image_io_processor::save_image(std::string file_addr, IplImage *img) {
+void image_io_processor::save_image(std::string img_name, IplImage *img) {
     if (img == 0) {
         std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
@@ -58,15 +74,21 @@ void image_io_processor::save_image(std::string file_addr, IplImage *img) {
     if (img->nChannels != 3) {
         std::cout << stderr << "Unexpected Dimension Received" << std::endl;
     }
-    cv::imwrite(file_addr, cv::cvarrToMat(img));
-}
-
-IplImage* image_io_processor::load_image(std::string file_addr) {
-    if (file_addr.empty()) {
+    if (img_name.empty()) {
         std::cout << stderr << "Empty Str Received" << std::endl;
         exit(1);
     }
-    return cvLoadImage(file_addr.data());
+    std::string img_path = path + img_name;
+    cv::imwrite(img_path, cv::cvarrToMat(img));
+}
+
+IplImage* image_io_processor::load_image(std::string img_name) {
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    std::string img_path = path + img_name;
+    return cvLoadImage(img_name.data());
 }
 
 /*
@@ -84,12 +106,12 @@ IplImage* image_io_processor::init_image(CvSize size, int depth, int channels) {
  * image_io_processor
  * image check related
  */
-void image_io_processor::show_image(IplImage *img, std::string name) {
+void image_io_processor::show_image(IplImage *img, std::string img_name) {
     if (img == 0) {
         std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
     }
-    cvShowImage(name.data(), img);
+    cvShowImage(img_name.data(), img);
     cvWaitKey();
 }
 

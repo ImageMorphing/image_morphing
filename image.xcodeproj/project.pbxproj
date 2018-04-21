@@ -78,13 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE0911A3208A171300B523B4 /* image_matrix_processor */ = {
+		BE0911A3208A171300B523B4 /* image_io_processor */ = {
 			isa = PBXGroup;
 			children = (
 				BE3B50EB208A168800340E65 /* image_io_processor.cpp */,
 				BE3B50EC208A168800340E65 /* image_io_processor.hpp */,
 			);
-			path = image_matrix_processor;
+			path = image_io_processor;
 			sourceTree = "<group>";
 		};
 		BE4C8C4E208ABC6F00F177BF /* image_seperator */ = {
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				BE4C8C4E208ABC6F00F177BF /* image_seperator */,
-				BE0911A3208A171300B523B4 /* image_matrix_processor */,
+				BE0911A3208A171300B523B4 /* image_io_processor */,
 				BE4C8C52208AC18F00F177BF /* image_merger */,
 				BE780A4120897EE900B7AC3B /* catmullrom.cpp */,
 				BE780A4420897EE900B7AC3B /* catmullrom.h */,

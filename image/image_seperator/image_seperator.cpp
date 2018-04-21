@@ -8,8 +8,7 @@
 
 #include "image_seperator.hpp"
 
-image_seperator::image_seperator(std::string file_addr) {
-    img_pro = image_io_processor();
+image_seperator::image_seperator(std::string file_addr): img_pro(file_addr) {
     if (file_addr.empty()) {
         std::cout << stderr << "Empty Str Received" << std::endl;
         exit(1);
@@ -25,9 +24,7 @@ image_seperator::~image_seperator() {
 }
 
 void image_seperator::sepe_image(std::string img_name) {
-    std::string img_path = path + img_name;
-    
-    IplImage *src_img = img_pro.load_image(img_path),
+    IplImage *src_img = img_pro.load_image(img_name),
              *r_plane = img_pro.init_image(cvGetSize(src_img), IPL_DEPTH_8U, 1),
              *g_plane = cvCloneImage(r_plane),
              *b_plane = cvCloneImage(r_plane);

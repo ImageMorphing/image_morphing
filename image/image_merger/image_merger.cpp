@@ -8,8 +8,7 @@
 
 #include "image_merger.hpp"
 
-image_merger::image_merger(std::string file_addr) {
-    img_pro = image_io_processor();
+image_merger::image_merger(std::string file_addr): img_pro(file_addr) {
     if (file_addr.empty()) {
         std::cout << stderr << "Empty Str Received" << std::endl;
         exit(1);
@@ -24,8 +23,6 @@ image_merger::image_merger(std::string file_addr) {
 image_merger::~image_merger() {}
 
 void image_merger::merg_image(std::string img_name) {
-    std::string img_path = path + img_name;
-    
     IplImage *r_channel = img_pro.load_image_as_object(path + "r.bw"),
              *g_channel = img_pro.load_image_as_object(path + "g.bw"),
              *b_channel = img_pro.load_image_as_object(path + "b.bw");
@@ -34,7 +31,7 @@ void image_merger::merg_image(std::string img_name) {
     
     img_pro.gene_image(r_channel, g_channel, b_channel, res_img);
     
-    img_pro.save_image(img_path, res_img);
+    img_pro.save_image(img_name, res_img);
 }
 
 IplImage* image_merger::get_merged_image() {
