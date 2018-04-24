@@ -29,24 +29,17 @@ void image_seperator::sepe_image(std::string img_name) {
              *g_plane = cvCloneImage(r_plane),
              *b_plane = cvCloneImage(r_plane);
     
-    IplImage *r_channel = img_pro.init_image(cvGetSize(src_img), IPL_DEPTH_8U, 3),
-             *g_channel = cvCloneImage(r_channel),
-             *b_channel = cvCloneImage(r_channel);
-    
     cvSplit(src_img, b_plane, g_plane, r_plane, NULL);
 
     // Begin to write output files
     // output the red channel jpg file
-    cvMerge(0, 0, r_plane, 0, r_channel);
-    img_pro.save_image_as_object(img_name + "_r.obj", r_channel);
+    img_pro.save_image_as_object(img_name + "_r.obj", r_plane);
     
     // output the green channel BW file
-    cvMerge(0, g_plane, 0, 0, g_channel);
-    img_pro.save_image_as_object(img_name + "_g.obj", g_channel);
+    img_pro.save_image_as_object(img_name + "_g.obj", g_plane);
     
     // output the blue channel BW file
-    cvMerge(b_plane, 0, 0, 0, b_channel);
-    img_pro.save_image_as_object(img_name + "_b.obj", b_channel);
+    img_pro.save_image_as_object(img_name + "_b.obj", b_plane);
 }
 
 void image_seperator::__check_path__() {

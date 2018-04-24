@@ -138,7 +138,10 @@ IplImage* image_io_processor::gene_image(IplImage *r, IplImage *g, IplImage *b, 
     }
 }
 
-IplImage* image_io_processor::gene_image_by_3x3(IplImage *r_channel, IplImage *g_channel, IplImage *b_channel, IplImage *res_img) {
+IplImage* image_io_processor::gene_image_by_3x3(IplImage *r_channel,
+                                                IplImage *g_channel,
+                                                IplImage *b_channel,
+                                                IplImage *res_img) {
     // ptr check
     auto size_ptr = r_channel != 0 ? r_channel : g_channel;
     size_ptr = size_ptr != 0 ? size_ptr : b_channel;
@@ -164,7 +167,10 @@ IplImage* image_io_processor::gene_image_by_3x3(IplImage *r_channel, IplImage *g
     return res;
 }
 
-IplImage* image_io_processor::gene_image_by_3x1(IplImage *r_plane, IplImage *g_plane, IplImage *b_plane, IplImage* res_img) {
+IplImage* image_io_processor::gene_image_by_3x1(IplImage *r_plane,
+                                                IplImage *g_plane,
+                                                IplImage *b_plane,
+                                                IplImage* res_img) {
     // ptr check
     auto size_ptr = r_plane != 0 ? r_plane : g_plane;
     size_ptr = size_ptr != 0 ? size_ptr : b_plane;

@@ -215,7 +215,7 @@ void resample(char *src, int len, int offst, float *xmap, char *dst)
             dst += offst;
             acc = 0.;
             inseg -= outseg;
-            outseg = inpos[u+1] - inpos[u];
+            outseg = inpos[u + 1] - inpos[u];
             sizfac = outseg;
             u++;
         }
