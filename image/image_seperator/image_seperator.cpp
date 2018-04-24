@@ -38,15 +38,15 @@ void image_seperator::sepe_image(std::string img_name) {
     // Begin to write output files
     // output the red channel jpg file
     cvMerge(0, 0, r_plane, 0, r_channel);
-    img_pro.save_image_as_object("r.obj", r_channel);
+    img_pro.save_image_as_object(img_name + "_r.obj", r_channel);
     
     // output the green channel BW file
     cvMerge(0, g_plane, 0, 0, g_channel);
-    img_pro.save_image_as_object("g.obj", g_channel);
+    img_pro.save_image_as_object(img_name + "_g.obj", g_channel);
     
     // output the blue channel BW file
     cvMerge(b_plane, 0, 0, 0, b_channel);
-    img_pro.save_image_as_object("b.obj", b_channel);
+    img_pro.save_image_as_object(img_name + "_b.obj", b_channel);
 }
 
 void image_seperator::__check_path__() {
