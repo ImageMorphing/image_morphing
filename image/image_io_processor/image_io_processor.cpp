@@ -30,8 +30,8 @@ image_io_processor::~image_io_processor() {
 void image_io_processor::save_image_as_object(std::string img_name, const cv::Mat mat) {
     std::string img_path = path + img_name;
     IplImage img = IplImage(mat);
-    if (img.nChannels == 1) {
-        std::cout << stderr << "This function only accept IplImage with 3 channels, please merge before call this function" << std::endl;
+    if (img.nChannels != 1) {
+        std::cout << stderr << "This function only accept IplImage with 1 channels, please merge before call this function" << std::endl;
         exit(1);
     }
     cvSave(img_path.data(), &img);
@@ -44,8 +44,8 @@ void image_io_processor::save_image_as_object(std::string img_name, const IplIma
         exit(1);
     }
     if (img) {
-        if (img->nChannels == 1) {
-            std::cout << stderr << "This function only accept IplImage with 3 channels, please merge before call this function" << std::endl;
+        if (img->nChannels != 1) {
+            std::cout << stderr << "This function only accept IplImage with 1 channels, please merge before call this function" << std::endl;
             exit(1);
         }
         cvSave(img_path.data(), img);

@@ -33,7 +33,7 @@ void image_morph(const IplImage* I1, const IplImage* I2, const image_ptr M1, con
         totalI = I1->width * I1->height;
     
     /* copy first frame to basename_000.bw */
-    name = basename + "_000.bw";
+    name = basename + "_000.obj";
     img_pro.save_image_as_object(name, I1);
     std::cout << "Finished Frame 0" << std::endl;
     
@@ -64,7 +64,7 @@ void image_morph(const IplImage* I1, const IplImage* I2, const image_ptr M1, con
         
         /* save frame into file */
         std::ostringstream oss;
-        oss << basename << "_" << i << ".bw" << std::endl;
+        oss << basename << "_" << i << ".obj" << std::endl;
         name = oss.str();
         img_pro.save_image_as_object(name, I3);
         std::cout << "Finished Frame " << i << std::endl;
@@ -72,7 +72,7 @@ void image_morph(const IplImage* I1, const IplImage* I2, const image_ptr M1, con
     
     /* copy last frame to basename_xxx.bw */
     std::ostringstream oss;
-    oss << basename << "_" << frame_num << ".bw" << std::endl;
+    oss << basename << "_" << frame_num << ".obj" << std::endl;
     img_pro.save_image_as_object(name, I2);
     std::cout << "Finished Frame " << frame_num << std::endl;
 }
