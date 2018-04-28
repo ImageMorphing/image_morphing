@@ -23,6 +23,7 @@
 		BE780A4C20897EEA00B7AC3B /* catmullrom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4120897EE900B7AC3B /* catmullrom.cpp */; };
 		BE780A4D20897EEA00B7AC3B /* warp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4220897EE900B7AC3B /* warp.cpp */; };
 		BE780A4E20897EEA00B7AC3B /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE780A4520897EEA00B7AC3B /* util.cpp */; };
+		BE8AEF7F20949A590019B32E /* main_component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8AEF7D20949A590019B32E /* main_component.cpp */; };
 		BEFB816F20899A0600C3AFBE /* seperate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFB816D20899A0600C3AFBE /* seperate.cpp */; };
 		BEFB817020899A0600C3AFBE /* merge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFB816E20899A0600C3AFBE /* merge.cpp */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,8 @@
 		BE780A4320897EE900B7AC3B /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		BE780A4420897EE900B7AC3B /* catmullrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = catmullrom.h; sourceTree = "<group>"; };
 		BE780A4520897EEA00B7AC3B /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		BE8AEF7D20949A590019B32E /* main_component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main_component.cpp; sourceTree = "<group>"; };
+		BE8AEF7E20949A590019B32E /* main_component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = main_component.hpp; sourceTree = "<group>"; };
 		BEFB816D20899A0600C3AFBE /* seperate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = seperate.cpp; sourceTree = "<group>"; };
 		BEFB816E20899A0600C3AFBE /* merge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = merge.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,17 +168,35 @@
 			isa = PBXGroup;
 			children = (
 				BE1F4FB5208AE7DC001509D9 /* typedef_c.hpp */,
+				BE8AEF8020949A680019B32E /* main_component */,
 				BE4C8C4E208ABC6F00F177BF /* image_seperator */,
 				BE0911A3208A171300B523B4 /* image_io_processor */,
 				BE4C8C52208AC18F00F177BF /* image_merger */,
 				BE1F4FB1208AE67C001509D9 /* image_util */,
 				BE07A90C208B103100C61BDD /* image_morph */,
 				BE07A910208B1BCC00C61BDD /* image_meshwrap */,
-				BE780A4120897EE900B7AC3B /* catmullrom.cpp */,
-				BE780A4420897EE900B7AC3B /* catmullrom.h */,
+				BE8AEF7C20949A1C0019B32E /* catmullrom */,
 				BE780A4220897EE900B7AC3B /* warp.cpp */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		BE8AEF7C20949A1C0019B32E /* catmullrom */ = {
+			isa = PBXGroup;
+			children = (
+				BE780A4420897EE900B7AC3B /* catmullrom.h */,
+				BE780A4120897EE900B7AC3B /* catmullrom.cpp */,
+			);
+			path = catmullrom;
+			sourceTree = "<group>";
+		};
+		BE8AEF8020949A680019B32E /* main_component */ = {
+			isa = PBXGroup;
+			children = (
+				BE8AEF7D20949A590019B32E /* main_component.cpp */,
+				BE8AEF7E20949A590019B32E /* main_component.hpp */,
+			);
+			path = main_component;
 			sourceTree = "<group>";
 		};
 		BEFB81622089905F00C3AFBE /* Frameworks */ = {
@@ -246,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8AEF7F20949A590019B32E /* main_component.cpp in Sources */,
 				BEFB817020899A0600C3AFBE /* merge.cpp in Sources */,
 				BE4C8C51208AC18A00F177BF /* image_merger.cpp in Sources */,
 				BE07A90F208B1BC700C61BDD /* image_meshwrap.cpp in Sources */,
@@ -381,11 +403,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TL48E545E4;
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/image",
-					"/usr/local/Cellar/opencv/**",
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -398,11 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TL48E545E4;
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/image",
-					"/usr/local/Cellar/opencv/**",
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

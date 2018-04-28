@@ -8,9 +8,6 @@
 
 #include "image_util.hpp"
 
-#define BW  0
-#define MESH  1
-
 image_util::image_util(std::string file_addr):img_pro(file_addr) {
     if (file_addr.empty()) {
         std::cout << stderr << "Received Empty String" << std::endl;

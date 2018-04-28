@@ -9,9 +9,6 @@
 #ifndef image_meshwrap_hpp
 #define image_meshwrap_hpp
 
-#define BW 0
-#define MESH 1
-
 #include <iostream>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
