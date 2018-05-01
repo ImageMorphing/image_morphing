@@ -8,8 +8,15 @@
 
 #include "image_io_processor.hpp"
 
-image_io_processor::image_io_processor() {
-    
+image_io_processor::image_io_processor(std::string file_addr) {
+    if (file_addr.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    if (file_addr[file_addr.size() - 1] != '/') {
+        file_addr += '/';
+    }
+    path = file_addr;
 }
 
 image_io_processor::~image_io_processor() {
@@ -20,50 +27,75 @@ image_io_processor::~image_io_processor() {
   * image_io_processor
   * file I/O related
   */
-void image_io_processor::save_image_as_object(std::string file_addr, cv::Mat mat) {
+void image_io_processor::save_image_as_object(std::string img_name, const cv::Mat mat) {
+    std::string img_path = path + img_name;
     IplImage img = IplImage(mat);
-    if (img.nChannels == 1) {
-        std::cout << stderr << "This function only accept IplImage with 3 channels, please merge before call this function" << std::endl;
+    if (img.nChannels != 1) {
+        std::cout << stderr << "This function only accept IplImage with 1 channels, please merge before call this function" << std::endl;
         exit(1);
     }
-    cvSave(file_addr.data(), &img);
+    cvSave(img_path.data(), &img);
 }
 
-void image_io_processor::save_image_as_object(std::string file_addr, IplImage* img) {
+void image_io_processor::save_image_as_object(std::string img_name, const IplImage* img) {
+    std::string img_path = path + img_name;
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
     if (img) {
-        if (img->nChannels == 1) {
-            std::cout << stderr << "This function only accept IplImage with 3 channels, please merge before call this function" << std::endl;
+        if (img->nChannels != 1) {
+            std::cout << stderr << "This function only accept IplImage with 1 channels, please merge before call this function" << std::endl;
             exit(1);
         }
-        cvSave(file_addr.data(), img);
+        cvSave(img_path.data(), img);
     } else {
         std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
     }
 }
 
-IplImage* image_io_processor::load_image_as_object(std::string file_addr) {
-    return (IplImage *)cvLoad(file_addr.data());
+IplImage* image_io_processor::load_image_as_object(std::string img_name) {
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    std::string img_path = path + img_name;
+    return (IplImage *)cvLoad(img_path.data());
 }
 
-void image_io_processor::save_image(std::string file_addr, cv::Mat mat) {
-    cv::imwrite(file_addr, mat);
+void image_io_processor::save_image(std::string img_name, cv::Mat mat) {
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    std::string img_path = path + img_name;
+    cv::imwrite(img_path, mat);
 }
 
-void image_io_processor::save_image(std::string file_addr, IplImage *img) {
+void image_io_processor::save_image(std::string img_name, IplImage *img) {
     if (img == 0) {
-        std::cout << stderr << "Empty Ptr Accpted" << std::endl;
+        std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
     }
-    cv::imwrite(file_addr, cv::cvarrToMat(img));
+    if (img->nChannels != 3) {
+        std::cout << stderr << "Unexpected Dimension Received" << std::endl;
+    }
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
+        exit(1);
+    }
+    std::string img_path = path + img_name;
+    cv::imwrite(img_path, cv::cvarrToMat(img));
 }
 
-IplImage* image_io_processor::load_image(std::string file_addr) {
-    if (file_addr.empty()) {
-        std::cout << stderr << "Empty Str Accpeted" << std::endl;
+IplImage* image_io_processor::load_image(std::string img_name) {
+    if (img_name.empty()) {
+        std::cout << stderr << "Empty Str Received" << std::endl;
         exit(1);
     }
-    return cvLoadImage(file_addr.data());
+    std::string img_path = path + img_name;
+    return cvLoadImage(img_path.data());
 }
 
 /*
@@ -81,12 +113,12 @@ IplImage* image_io_processor::init_image(CvSize size, int depth, int channels) {
  * image_io_processor
  * image check related
  */
-void image_io_processor::show_image(IplImage *img, std::string name) {
+void image_io_processor::show_image(IplImage *img, std::string img_name) {
     if (img == 0) {
-        std::cout << stderr << "Recepted Empty Ptr" << std::endl;
+        std::cout << stderr << "Empty Ptr Received" << std::endl;
         exit(1);
     }
-    cvShowImage(name.data(), img);
+    cvShowImage(img_name.data(), img);
     cvWaitKey();
 }
 
@@ -101,17 +133,20 @@ IplImage* image_io_processor::gene_image(IplImage *r, IplImage *g, IplImage *b, 
     } else if (r->nChannels == 3) {
         return this->gene_image_by_3x3(r, g, b, res);
     } else {
-        std::cout << stderr << "Unexpected Channel Accepted" << std::endl;
+        std::cout << stderr << "Unexpected Channel Received" << std::endl;
         exit(1);
     }
 }
 
-IplImage* image_io_processor::gene_image_by_3x3(IplImage *r_channel, IplImage *g_channel, IplImage *b_channel, IplImage *res_img) {
+IplImage* image_io_processor::gene_image_by_3x3(IplImage *r_channel,
+                                                IplImage *g_channel,
+                                                IplImage *b_channel,
+                                                IplImage *res_img) {
     // ptr check
     auto size_ptr = r_channel != 0 ? r_channel : g_channel;
     size_ptr = size_ptr != 0 ? size_ptr : b_channel;
     if (size_ptr == 0) {
-        std::cout << stderr << "Empty Ptrs Accepted" << std::endl;
+        std::cout << stderr << "Empty Ptrs Received" << std::endl;
         exit(1);
     }
     
@@ -132,12 +167,15 @@ IplImage* image_io_processor::gene_image_by_3x3(IplImage *r_channel, IplImage *g
     return res;
 }
 
-IplImage* image_io_processor::gene_image_by_3x1(IplImage *r_plane, IplImage *g_plane, IplImage *b_plane, IplImage* res_img) {
+IplImage* image_io_processor::gene_image_by_3x1(IplImage *r_plane,
+                                                IplImage *g_plane,
+                                                IplImage *b_plane,
+                                                IplImage* res_img) {
     // ptr check
     auto size_ptr = r_plane != 0 ? r_plane : g_plane;
     size_ptr = size_ptr != 0 ? size_ptr : b_plane;
     if (size_ptr == 0) {
-        std::cout << stderr << "Empty Ptrs Accepted" << std::endl;
+        std::cout << stderr << "Empty Ptrs Received" << std::endl;
         exit(1);
     }
     

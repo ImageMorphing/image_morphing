@@ -6,9 +6,7 @@
  * ======================================================================
  */
 
-#include "meshwarp.h"
 #include "catmullrom.h"
-#include <iostream>
 
 using namespace std;
 
@@ -20,19 +18,18 @@ using namespace std;
  * len2 positions on the spline are to be computed. Their positions are
  * given in x2. The spline values are stored in y2.
  */
-void catmullRom(float *x1, float *y1, int len1, float *x2, float *y2, int len2) 
-{ 
+void catmullRom(float *x1, float *y1, int len1, float *x2, float *y2, int len2) {
     int i, j, dir, j1, j2;
-    double x,  dx1, dx2;
+    double x, dx1, dx2;
     double dx, dy, yd1, yd2, p1, p2, p3;
     double a0y, a1y, a2y, a3y;
     
     /* find direction of monotonic x1; skip ends */
-    if(x1[0] < x1[1]) { /* increasing */
-        if(x2[0]<x1[0] || x2[len2-1]>x1[len1-1]) dir=0;
+    if (x1[0] < x1[1]) { /* increasing */
+        if (x2[0] < x1[0] || x2[len2-1] > x1[len1-1]) dir = 0;
         else dir = 1;
     } else {  /* decreasing */
-        if(x2[0]>x1[0] || x2[len2-1]<x1[len1-1]) dir=0;
+        if (x2[0] > x1[0] || x2[len2-1] < x1[len1-1]) dir = 0;
         else dir = -1;
     }
     if(dir == 0) {   /* error */
@@ -41,7 +38,7 @@ void catmullRom(float *x1, float *y1, int len1, float *x2, float *y2, int len2)
     }
     
     /* p1 is first endpoint of interval 
-     * p2 is resampling position
+/Users/aUcid/Desktop/image_morphing/image/catmullrom.h     * p2 is resampling position
      * p3 is second endpoint of interval
      * j  is input index for current interval
      */

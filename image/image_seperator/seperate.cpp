@@ -1,12 +1,12 @@
-///********************************************************************/
-///*Seperate SGI color image to BW image files                                                                 */
-///*File name: seperate.c                                                                                                    */
-///*Author:    Yurong Sun, Joseph Pan                                                                                                 */
-///*Description:                                                                                                                  */
-///*            Read color SGI format image file                                                                      */
-///*            Create three grayscale BW format images relative to r, g, b channels                  */
-///********************************************************************/
-//
+/********************************************************************/
+/*Seperate SGI color image to BW image files                                                                 */
+/*File name: seperate.c                                                                                                    */
+/*Author:    Yurong Sun, Joseph Pan                                                                                                 */
+/*Description:                                                                                                                  */
+/*            Read color SGI format image file                                                                      */
+/*            Create three grayscale BW format images relative to r, g, b channels                  */
+/********************************************************************/
+
 //#include <iostream>
 //
 //#include <opencv2/imgproc.hpp>
@@ -18,15 +18,16 @@
 //using namespace std;
 //
 //#define IXSIZE 400
-////#define IYSIZE 400
+//#define IYSIZE 400
 //#define IZSIZE 3
-//
+
+
 //int main(int argc, char **argv) {
 //    auto img_pro = image_io_processor();
-//    
+//
 //    /* Read the input RGB file*/
 //    string path = "/Users/aUcid/Desktop/image/image/";
-//    
+//
 //    IplImage *pSrcImage = img_pro.load_image(path + "ts1989.jpg"),
 //             *pR_Plane = img_pro.init_image(cvGetSize(pSrcImage), IPL_DEPTH_8U, 1),
 //             *pG_Plane = cvCloneImage(pR_Plane),
@@ -52,4 +53,4 @@
 //    img_pro.save_image(path + "b.bw", pB_Channel);
 //
 //}
-//
+
