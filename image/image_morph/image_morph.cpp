@@ -72,7 +72,8 @@ void image_morph(const IplImage* I1, const IplImage* I2, const image_ptr M1, con
     
     /* copy last frame to basename_xxx.bw */
     std::ostringstream oss;
-    oss << basename << "_" << frame_num << ".obj" << std::endl;
+    oss << basename << "_" << frame_num  - 1 << ".obj" << std::endl;
+    name = oss.str();
     img_pro.save_image_as_object(name, I2);
     std::cout << "Finished Frame " << frame_num << std::endl;
 }
